@@ -119,28 +119,46 @@ AND DueDate BETWEEN CURRENT_DATE AND CURRENT_DATE + INTERVAL '7 days';
 
 4.4 Query Insertar Nueva Task;
 
-INSERT INTO Tasks (
-    ProjectId, Title, Description, AssigneeId, Status, Priority, EstimatedComplexity, DueDate
-)
-SELECT 
-    1,
-    'New task example',
-    'Task description',
-    2,
-    'ToDo',
-    'Medium',
-    3,
-    DATE '2025-03-20'
-WHERE EXISTS (
-    SELECT 1 
-    FROM Projects p 
-    WHERE p.ProjectId = 1
-)
-AND EXISTS (
-    SELECT 1 
-    FROM Developers d 
-    WHERE d.DeveloperId = 2
-);
+CREATE PROCEDURE sp_InsertarTarea
+    @ProjectId INT,
+    @Title NVARCHAR(150),
+    @Description NVARCHAR(MAX),
+    @AssigneeId INT,
+    @Status NVARCHAR(50),
+    @Priority NVARCHAR(50),
+    @EstimatedComplexity INT,
+    @DueDate DATE
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF NOT EXISTS (SELECT 1 FROM Projects WHERE ProjectId = @ProjectId)
+    BEGIN
+        RAISERROR('Error: El ProjectId especificado no existe.', 16, 1);
+        RETURN;
+    END
+
+    IF NOT EXISTS (SELECT 1 FROM Developers WHERE DeveloperId = @AssigneeId)
+    BEGIN
+        RAISERROR('Error: El AssigneeId (Desarrollador) especificado no existe.', 16, 1);
+        RETURN;
+    END
+
+    BEGIN TRY
+        INSERT INTO Tasks (
+            ProjectId, Title, Description, AssigneeId, [Status], Priority, EstimatedComplexity, DueDate
+        )
+        VALUES (
+            @ProjectId, @Title, @Description, @AssigneeId, @Status, @Priority, @EstimatedComplexity, @DueDate
+        );
+        
+        PRINT 'Tarea insertada con éxito.';
+    END TRY
+    BEGIN CATCH
+        DECLARE @ErrorMessage NVARCHAR(4000) = ERROR_MESSAGE();
+        RAISERROR(@ErrorMessage, 16, 1);
+    END CATCH
+END;
 
 5  Developer Delay Risk Prediction:
 

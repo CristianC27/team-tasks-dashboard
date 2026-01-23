@@ -1,0 +1,21 @@
+# Visual Studio
+.vs
+.user
+.suo
+.vsidx
+
+# Build results
+bin
+obj
+
+# Logs and databases
+.log
+.db
+
+# Packages
+.nupkg
+.snupkg
+packages
+
+# Configuración local
+appsettings.Development.json
