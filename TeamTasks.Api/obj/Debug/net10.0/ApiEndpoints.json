@@ -1,0 +1,115 @@
+[
+  {
+    "ContainingType": "TeamTasks.Api.Controllers.DashboardController",
+    "Method": "TestDb",
+    "RelativePath": "api/dashboard/db",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TeamTasks.Api.Controllers.DashboardController",
+    "Method": "GetDeveloperDelayRisk",
+    "RelativePath": "api/dashboard/developer-delay-risk",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TeamTasks.Api.Controllers.DashboardController",
+    "Method": "GetDeveloperWorkload",
+    "RelativePath": "api/dashboard/developer-workload",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TeamTasks.Api.Controllers.DashboardController",
+    "Method": "GetProjectSummary",
+    "RelativePath": "api/dashboard/project-summary",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TeamTasks.Api.Controllers.DevelopersController",
+    "Method": "GetActiveDevelopers",
+    "RelativePath": "api/developers",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TeamTasks.Api.Controllers.ProjectsController",
+    "Method": "GetProjects",
+    "RelativePath": "api/projects",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TeamTasks.Api.Controllers.ProjectsController",
+    "Method": "GetTasksByProject",
+    "RelativePath": "api/projects/{id}/tasks",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TeamTasks.Api.Controllers.TasksController",
+    "Method": "CreateTask",
+    "RelativePath": "api/tasks",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "TeamTasks.Api.DTOs.CreateTaskDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "TeamTasks.Api.Controllers.TasksController",
+    "Method": "UpdateTaskStatus",
+    "RelativePath": "api/tasks/{id}/status",
+    "HttpMethod": "PUT",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "dto",
+        "Type": "TeamTasks.Api.DTOs.UpdateTaskStatusDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

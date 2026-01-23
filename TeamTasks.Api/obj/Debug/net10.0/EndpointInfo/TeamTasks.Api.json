@@ -1,0 +1,265 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "TeamTasks.Api",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/dashboard/developer-delay-risk": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/dashboard/developer-workload": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/dashboard/project-summary": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/dashboard/db": {
+      "get": {
+        "tags": [
+          "Dashboard"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/developers": {
+      "get": {
+        "tags": [
+          "Developers"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/projects": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/projects/{id}/tasks": {
+      "get": {
+        "tags": [
+          "Projects"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/tasks": {
+      "post": {
+        "tags": [
+          "Tasks"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTaskDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTaskDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CreateTaskDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/tasks/{id}/status": {
+      "put": {
+        "tags": [
+          "Tasks"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskStatusDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskStatusDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/UpdateTaskStatusDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "CreateTaskDto": {
+        "required": [
+          "assigneeId",
+          "dueDate",
+          "priority",
+          "projectId",
+          "status",
+          "title"
+        ],
+        "type": "object",
+        "properties": {
+          "projectId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "assigneeId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "maxLength": 150,
+            "minLength": 1,
+            "type": "string"
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "status": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "priority": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "estimatedComplexity": {
+            "maximum": 5,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32"
+          },
+          "dueDate": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UpdateTaskStatusDto": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string",
+            "nullable": true
+          },
+          "priority": {
+            "type": "string",
+            "nullable": true
+          },
+          "estimatedComplexity": {
+            "maximum": 5,
+            "minimum": 1,
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Dashboard"
+    },
+    {
+      "name": "Developers"
+    },
+    {
+      "name": "Projects"
+    },
+    {
+      "name": "Tasks"
+    }
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\teamtasks.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:teamtasks.api.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:models\\taskitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:models\\project.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\models\\developer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:models\\developer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\dtos\\updatetaskstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:dtos\\updatetaskstatusdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\dtos\\projectsummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:dtos\\projectsummarydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\dtos\\developerworkloaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:dtos\\developerworkloaddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\dtos\\developerdelayriskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:dtos\\developerdelayriskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\dtos\\createtaskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:dtos\\createtaskdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:controllers\\taskscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:controllers\\projectscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\controllers\\developerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:controllers\\developerscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|c:\\users\\estefania mahecha\\documents\\nserio prueba tecnica\\team-tasks-dashboard\\backend\\teamtasks.api\\controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9161D4FB-1D9C-9934-086A-FE5B9A094FE4}|TeamTasks.Api.csproj|solutionrelative:controllers\\dashboardcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 15,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TeamTasks.Api.http",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\TeamTasks.Api.http",
+              "RelativeDocumentMoniker": "TeamTasks.Api.http",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\TeamTasks.Api.http",
+              "RelativeToolTip": "TeamTasks.Api.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2026-01-23T20:19:44.291Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\appsettings.Development.json",
+              "RelativeToolTip": "appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-23T20:19:34.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DeveloperDelayRiskDto.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\DeveloperDelayRiskDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\DeveloperDelayRiskDto.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\DeveloperDelayRiskDto.cs",
+              "RelativeToolTip": "DTOs\\DeveloperDelayRiskDto.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAuwAsAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-23T02:03:26.752Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UpdateTaskStatusDto.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\UpdateTaskStatusDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\UpdateTaskStatusDto.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\UpdateTaskStatusDto.cs",
+              "RelativeToolTip": "DTOs\\UpdateTaskStatusDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:56:06.461Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CreateTaskDto.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\CreateTaskDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\CreateTaskDto.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\CreateTaskDto.cs",
+              "RelativeToolTip": "DTOs\\CreateTaskDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:55:30.929Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "DevelopersController.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Controllers\\DevelopersController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DevelopersController.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Controllers\\DevelopersController.cs",
+              "RelativeToolTip": "Controllers\\DevelopersController.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAAABgAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:51:38.719Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TasksController.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Controllers\\TasksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\TasksController.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Controllers\\TasksController.cs",
+              "RelativeToolTip": "Controllers\\TasksController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACYAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:51:25.27Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ProjectsController.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Controllers\\ProjectsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProjectsController.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Controllers\\ProjectsController.cs",
+              "RelativeToolTip": "Controllers\\ProjectsController.cs",
+              "ViewState": "AgIAADsAAAAAAAAAAAAAACsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:51:14.94Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Project.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Models\\Project.cs",
+              "RelativeDocumentMoniker": "Models\\Project.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Models\\Project.cs",
+              "RelativeToolTip": "Models\\Project.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAeAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:36:34.095Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TaskItem.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Models\\TaskItem.cs",
+              "RelativeDocumentMoniker": "Models\\TaskItem.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Models\\TaskItem.cs",
+              "RelativeToolTip": "Models\\TaskItem.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAwwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:35:36.707Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Developer.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Models\\Developer.cs",
+              "RelativeDocumentMoniker": "Models\\Developer.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Models\\Developer.cs",
+              "RelativeToolTip": "Models\\Developer.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAswBgAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:35:30.795Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProjectSummaryDto.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\ProjectSummaryDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\ProjectSummaryDto.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\ProjectSummaryDto.cs",
+              "RelativeToolTip": "DTOs\\ProjectSummaryDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:24:11.792Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "DeveloperWorkloadDto.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\DeveloperWorkloadDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\DeveloperWorkloadDto.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\DTOs\\DeveloperWorkloadDto.cs",
+              "RelativeToolTip": "DTOs\\DeveloperWorkloadDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:23:55.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "DashboardController.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Controllers\\DashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DashboardController.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Controllers\\DashboardController.cs",
+              "RelativeToolTip": "Controllers\\DashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:14:24.168Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2026-01-22T04:09:35.726Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "Data\\AppDbContext.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAmwA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:08:57.319Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\Estefania Mahecha\\Documents\\NSERIO prueba tecnica\\team-tasks-dashboard\\backend\\TeamTasks.Api\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-01-22T04:00:07.409Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
