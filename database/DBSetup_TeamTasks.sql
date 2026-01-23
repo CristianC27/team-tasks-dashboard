@@ -69,7 +69,7 @@ VALUES
 (1, 'Fix CSS issues', 'Responsive fixes', 3, 'ToDo', 'Medium', 3, '2025-02-10', NULL),
 (2, 'Create API endpoints', 'Backend work', 4, 'InProgress', 'High', 5, '2025-03-10', NULL),
 (2, 'Auth module', 'JWT auth', 5, 'ToDo', 'High', 4, '2025-03-15', NULL),
-(3, 'Database migration', 'Move old DB', 1, 'Completed', 'Medium', 3, '2024-12-10', '2024-12-09');
+(3, 'Database migration', 'Move old DB', 1, 'Completed', 'Medium', 3, '2024-12-10', '2024-12-09'),
 (1, 'Optimize images', 'Improve load times', 4, 'Completed', 'Low', 2, '2025-01-25', '2025-01-24'),
 (1, 'SEO improvements', 'Meta tags and structure', 5, 'Completed', 'Medium', 3, '2025-01-30', '2025-02-02'),
 (1, 'Navbar refactor', 'Refactor navigation menu', 1, 'InProgress', 'Medium', 3, '2025-02-12', NULL),
