@@ -22,3 +22,7 @@ Requisitos
 -PostgreSQL 17
 -Angular CLI 16 o superior
 -Git
+
+Instalar:
+-Clonar el repositorio:
+https://github.com/CristianC27/team-tasks-dashboard.git
