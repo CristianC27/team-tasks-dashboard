@@ -1,0 +1,567 @@
+<div class="container-fluid py-4">
+
+  <!-- ================= HEADER ================= -->
+  <div class="row mb-4">
+    <div class="col">
+      <div class="card shadow-sm header-card">
+        <div class="card-body text-center">
+          <h3 class="mb-0">Panel de Control de Proyectos</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOADER -->
+  <div *ngIf="loading" class="loader-container text-center my-4">
+    <div class="spinner mx-auto"></div>
+    <p class="mt-3">Cargando datos del panel...</p>
+  </div>
+
+  <!-- ================= PROYECTOS ================= -->
+  <div class="row" *ngIf="projects.length > 0 && !loading && !errorMessage">
+    <div class="col">
+      <div class="card shadow-sm mb-4 projects-card">
+        <div class="card-body p-0">
+          <table class="table table-hover align-middle mb-0 projects-table">
+            <thead>
+              <tr>
+                <th>Nombre</th>
+                <th>Cliente</th>
+                <th>Estado</th>
+                <th class="text-center">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let p of projects"
+                  [class.table-active]="selectedProjectId === p.projectId">
+
+                <td class="fw-semibold project-name">{{ p.name }}</td>
+                <td class="client-name">{{ p.clientName }}</td>
+
+                <td>
+                  <span class="badge"
+                        [ngClass]="{
+                          'status-planned': p.status === 'Planned',
+                          'status-todo': p.status === 'ToDo',
+                          'status-inprogress': p.status === 'InProgress',
+                          'status-completed': p.status === 'Completed',
+                          'status-blocked': p.status === 'Blocked'
+                        }">
+                    {{ p.status }}
+                  </span>
+                </td>
+
+                <td class="text-center">
+                  <div class="action-buttons">
+                    <button class="btn btn-view-tasks"
+                            (click)="selectProject(p.projectId)">
+                      Ver tareas
+                    </button>
+
+<button class="btn btn-add-task"
+        title="Nueva tarea"
+        (click)="openCreateTaskModal(p.projectId)">
+  <i class="bi bi-plus-lg me-2"></i> Agregar Tarea
+</button>
+                  </div>
+                </td>
+
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- ================= TAREAS + GRAFICA ================= -->
+<div class="row gx-4" *ngIf="selectedProjectId && allTasks.length > 0">
+
+  <!-- ================= TAREAS ================= -->
+  <div class="col-lg-8 pe-lg-3">
+
+    <!-- Filtros -->
+    <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <div class="row g-3">
+
+          <div class="col-md-4">
+            <label class="form-label">Estado</label>
+            <select class="form-select"
+                    [(ngModel)]="filterStatus"
+                    (change)="onFilterChange()">
+              <option value="">Todos</option>
+              <option value="ToDo">ToDo</option>
+              <option value="InProgress">InProgress</option>
+              <option value="Completed">Completed</option>
+              <option value="Blocked">Blocked</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">Prioridad</label>
+            <select class="form-select"
+                    [(ngModel)]="filterPriority"
+                    (change)="onFilterChange()">
+              <option value="">Todas</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
+            </select>
+          </div>
+
+          <div class="col-md-4">
+            <label class="form-label">Desarrollador</label>
+            <select class="form-select"
+                    [(ngModel)]="filterDeveloper"
+                    (change)="onFilterChange()">
+              <option [ngValue]="null">Todos</option>
+              <option *ngFor="let dev of developers"
+                      [ngValue]="dev.developerId">
+                {{ dev.fullName }}
+              </option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabla tareas -->
+    <div class="card shadow-sm">
+      <div class="card-body p-0">
+
+        <!-- 🔑 CLAVE: evita que la tabla invada la gráfica -->
+        <div class="table-responsive">
+          <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+              <tr>
+                <th>Título</th>
+                <th>Asignado</th>
+                <th>Estado</th>
+                <th>Prioridad</th>
+                <th>Complejo</th>
+                <th>Creación</th>
+                <th>Vence</th>
+              </tr>
+            </thead>
+            <tbody>
+
+              <tr *ngFor="let t of tasks"
+                  class="cursor-pointer"
+                  (click)="viewTaskDetail(t)">
+
+                <td class="fw-semibold">{{ t.title }}</td>
+
+                <td>
+                  {{ t.developerFullName }}
+                  <small class="text-muted d-block">ID: {{ t.assigneeId }}</small>
+                </td>
+
+                <td>
+                  <span class="badge"
+                        [ngClass]="{
+                          'bg-secondary': t.status === 'ToDo',
+                          'bg-primary': t.status === 'InProgress',
+                          'bg-success': t.status === 'Completed',
+                          'bg-danger': t.status === 'Blocked'
+                        }">
+                    {{ t.status }}
+                  </span>
+                </td>
+
+                <td>
+                  <span class="badge"
+                        [ngClass]="{
+                          'bg-success': t.priority === 'Low',
+                          'bg-warning text-dark': t.priority === 'Medium',
+                          'bg-danger': t.priority === 'High'
+                        }">
+                    {{ t.priority }}
+                  </span>
+                </td>
+
+                <td class="text-center">
+                  <span class="badge bg-dark">
+                    {{ t.estimatedComplexity }}
+                  </span>
+                </td>
+
+                <td>{{ t.createdAt | date:'dd/MM/yyyy' }}</td>
+                <td>{{ t.dueDate | date:'dd/MM/yyyy' }}</td>
+              </tr>
+
+              <tr *ngIf="tasks.length === 0">
+                <td colspan="7" class="text-center text-muted py-4">
+                  No se encontraron tareas
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Paginación -->
+      <div class="pagination-wrapper">
+        <div class="pagination-controls">
+          <button class="btn-pagination"
+                  (click)="previousPage()"
+                  [disabled]="page === 1">
+            ‹
+          </button>
+
+          <button *ngFor="let p of pageNumbers"
+                  class="btn-pagination"
+                  [class.active]="p === page"
+                  (click)="goToPage(p)">
+            {{ p }}
+          </button>
+
+          <span class="pagination-info">
+            Página {{ page }} de {{ totalPages }}
+          </span>
+
+          <button class="btn-pagination"
+                  (click)="nextPage()"
+                  [disabled]="page === totalPages">
+            ›
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- ================= GRAFICA ================= -->
+    <div class="col-lg-4">
+      <div class="card shadow-sm h-100">
+        <div class="card-header text-center">
+          <h5 class="mb-0">Resumen gráfico de tareas</h5>
+        </div>
+        <div class="card-body d-flex justify-content-center align-items-center">
+          <canvas baseChart
+                  [data]="chartData"
+                  [type]="'doughnut'">
+          </canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ================= MODAL CREAR TAREA ================= -->
+  <div *ngIf="showCreateTask" class="modal-overlay">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+
+      <!-- Header -->
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0">
+          Nueva Tarea - Proyecto #{{ selectedProjectId }}
+        </h5>
+
+        <button type="button" class="btn-close" aria-label="Close" (click)="cancelCreateTask()">X</button>
+      </div>
+
+      <!-- Form -->
+      <form (ngSubmit)="createTask()" #taskForm="ngForm" class="p-4">
+
+        <!-- ================= INFO GENERAL ================= -->
+        <div class="border rounded-3 p-3 mb-4 bg-light">
+          <h6 class="fw-semibold text-primary mb-3">
+            Información general
+          </h6>
+
+          <!-- Título -->
+          <div class="mb-3">
+            <label class="form-label">
+              Título <span class="text-danger">*</span>
+            </label>
+
+            <input type="text" class="form-control" name="title" [(ngModel)]="newTask.title" #title="ngModel" required
+              maxlength="50" [class.is-invalid]="title.invalid && title.touched">
+
+            <div class="invalid-feedback">
+              El título es obligatorio y no puede superar 50 caracteres.
+            </div>
+
+            <div class="form-text text-end">
+              {{ newTask.title.length || 0 }}/50
+            </div>
+          </div>
+
+
+          <!-- Descripción -->
+          <div class="mb-3">
+            <label class="form-label">Descripción</label>
+
+            <textarea class="form-control" name="description" [(ngModel)]="newTask.description" #description="ngModel"
+              rows="3" maxlength="150" [class.is-invalid]="description.invalid && description.touched">
+  </textarea>
+
+            <div class="invalid-feedback">
+              La descripción no puede superar 150 caracteres.
+            </div>
+
+            <div class="form-text text-end">
+              {{ newTask.description?.length || 0 }}/150
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ================= ESTADO Y PRIORIDAD ================= -->
+        <div class="border rounded-3 p-3 mb-4">
+          <h6 class="fw-semibold text-primary mb-3">
+            Estado de la tarea
+          </h6>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">
+                Estado <span class="text-danger">*</span>
+              </label>
+
+              <select class="form-select" name="status" [(ngModel)]="newTask.status" #status="ngModel" required
+                [class.is-invalid]="status.invalid && status.touched">
+
+                <option value="" disabled>Seleccione</option>
+                <option value="ToDo">ToDo</option>
+                <option value="InProgress">InProgress</option>
+                <option value="Completed">Completed</option>
+                <option value="Blocked">Blocked</option>
+              </select>
+
+              <div class="invalid-feedback">
+                Debe seleccionar un estado.
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="form-label">
+                Prioridad <span class="text-danger">*</span>
+              </label>
+
+              <select class="form-select" name="priority" [(ngModel)]="newTask.priority" #priority="ngModel" required
+                [class.is-invalid]="priority.invalid && priority.touched">
+
+                <option value="" disabled>Seleccione</option>
+                <option value="Low">Low</option>
+                <option value="Medium">Medium</option>
+                <option value="High">High</option>
+              </select>
+
+              <div class="invalid-feedback">
+                Debe seleccionar una prioridad.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= ASIGNACIÓN ================= -->
+        <div class="border rounded-3 p-3 mb-4">
+          <h6 class="fw-semibold text-primary mb-3">
+            Asignación y planificación
+          </h6>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label class="form-label">
+                Complejidad (1–5) <span class="text-danger">*</span>
+              </label>
+
+              <input type="number" class="form-control" name="estimatedComplexity"
+                [(ngModel)]="newTask.estimatedComplexity" #complexity="ngModel" min="1" max="5" required
+                [class.is-invalid]="complexity.invalid && complexity.touched">
+
+              <div class="invalid-feedback">
+                La complejidad debe estar entre 1 y 5.
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <label class="form-label">
+                Asignar a <span class="text-danger">*</span>
+              </label>
+
+              <select class="form-select" name="assigneeId" [(ngModel)]="newTask.assigneeId" #assignee="ngModel"
+                required [class.is-invalid]="assignee.invalid && assignee.touched">
+
+                <option [ngValue]="null" disabled>Seleccione</option>
+                <option *ngFor="let dev of developers" [ngValue]="dev.developerId">
+                  {{ dev.fullName }}
+                </option>
+              </select>
+
+              <div class="invalid-feedback">
+                Debe asignar la tarea a un desarrollador.
+              </div>
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">
+              Fecha de entrega <span class="text-danger">*</span>
+            </label>
+
+            <input type="date" class="form-control" name="dueDate" [(ngModel)]="newTask.dueDate" #dueDate="ngModel"
+              required [class.is-invalid]="dueDate.invalid && dueDate.touched">
+
+            <div class="invalid-feedback">
+              Debe seleccionar una fecha de entrega.
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= ACCIONES ================= -->
+        <div class="d-flex justify-content-end gap-2">
+          <button type="button" class="btn btn-outline-secondary" (click)="cancelCreateTask()">
+            Cancelar
+          </button>
+
+          <button type="submit" class="btn btn-primary px-4" [disabled]="taskForm.invalid">
+            Guardar tarea
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+
+
+  <!-- ================= MODAL DETALLE TAREA ================= -->
+  <div *ngIf="showTaskDetail && selectedTask" class="modal-overlay" (click)="closeTaskDetail()">
+
+    <div class="modal-content detail-modal" (click)="$event.stopPropagation()">
+
+      <!-- Header -->
+      <div class="modal-header d-flex justify-content-between align-items-center">
+        <h5 class="modal-title mb-0">
+          Detalle de Tarea #{{ selectedTask.taskId }}
+        </h5>
+
+        <button type="button" class="btn-close" aria-label="Close" (click)="closeTaskDetail()">X
+        </button>
+      </div>
+
+      <!-- Body -->
+      <div class="p-4">
+
+        <!-- ================= INFO GENERAL ================= -->
+        <div class="border rounded-3 p-3 mb-4 bg-light">
+          <h6 class="fw-semibold text-primary mb-3">
+            Información general
+          </h6>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <small class="text-muted">Título</small>
+              <div class="fw-semibold">
+                {{ selectedTask.title }}
+              </div>
+            </div>
+
+            <div class="col-md-3">
+              <small class="text-muted">Estado</small><br>
+              <span class="badge" [ngClass]="{
+                    'bg-secondary': selectedTask.status === 'ToDo',
+                    'bg-primary': selectedTask.status === 'InProgress',
+                    'bg-success': selectedTask.status === 'Completed',
+                    'bg-danger': selectedTask.status === 'Blocked'
+                  }">
+                {{ selectedTask.status }}
+              </span>
+            </div>
+
+            <div class="col-md-3">
+              <small class="text-muted">Prioridad</small><br>
+              <span class="badge" [ngClass]="{
+                    'bg-success': selectedTask.priority === 'Low',
+                    'bg-warning text-dark': selectedTask.priority === 'Medium',
+                    'bg-danger': selectedTask.priority === 'High'
+                  }">
+                {{ selectedTask.priority }}
+              </span>
+            </div>
+
+            <div class="col-md-3">
+              <small class="text-muted">Complejidad</small>
+              <div class="fw-semibold">
+                {{ selectedTask.estimatedComplexity }}/5
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= DESCRIPCIÓN ================= -->
+        <div class="border rounded-3 p-3 mb-4">
+          <h6 class="fw-semibold text-primary mb-3">
+            Descripción
+          </h6>
+
+          <p class="mb-0 text-muted">
+            {{ selectedTask.description || 'Sin descripción' }}
+          </p>
+        </div>
+
+        <!-- ================= ASIGNACIÓN ================= -->
+        <div class="border rounded-3 p-3 mb-4">
+          <h6 class="fw-semibold text-primary mb-3">
+            Asignación
+          </h6>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <small class="text-muted">Desarrollador</small>
+              <div class="fw-semibold">
+                {{ selectedTask.developerFullName }}
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <small class="text-muted">ID Desarrollador</small>
+              <div class="fw-semibold">
+                {{ selectedTask.assigneeId }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= FECHAS ================= -->
+        <div class="border rounded-3 p-3 mb-4">
+          <h6 class="fw-semibold text-primary mb-3">
+            Fechas
+          </h6>
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <small class="text-muted">Fecha de creación</small>
+              <div>
+                {{ selectedTask.createdAt | date:'dd/MM/yyyy HH:mm' }}
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <small class="text-muted">Fecha de vencimiento</small>
+              <div>
+                {{ selectedTask.dueDate | date:'dd/MM/yyyy' }}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ================= PROYECTO ================= -->
+        <div class="border rounded-3 p-3">
+          <h6 class="fw-semibold text-primary mb-3">
+            Proyecto
+          </h6>
+
+          <small class="text-muted">ID Proyecto</small>
+          <div class="fw-semibold">
+            {{ selectedTask.projectId }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>

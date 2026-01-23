@@ -1,0 +1,208 @@
+<div class="container-xl py-4 main-container">
+
+  <!-- HEADER -->
+  <header class="header mb-4">
+    <div class="d-flex align-items-center gap-3 header-content">
+      <div class="header-icon">📊</div>
+      <div>
+        <h2 class="mb-0">Panel de Desarrolladores</h2>
+        <p class="header-subtitle mb-0">Monitoreo en tiempo real</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- LOADER -->
+  <div *ngIf="loading" class="loader-container text-center my-4">
+    <div class="spinner mx-auto"></div>
+    <p class="mt-3">Cargando datos del panel...</p>
+  </div>
+
+  <!-- ERROR -->
+  <div *ngIf="errorMessage" class="error-banner alert alert-danger d-flex align-items-center">
+    <span class="me-2 error-icon">⚠️</span>
+    {{ errorMessage }}
+  </div>
+
+  <!-- ========================= -->
+  <!-- 1. Carga por desarrollador -->
+  <!-- ========================= -->
+  <section class="card card-developers shadow-sm mb-4" *ngIf="!loading && !errorMessage">
+    <div class="card-header bg-transparent border-0">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6 d-flex align-items-center gap-2 card-title">
+          <span class="card-icon">👨‍💻</span>
+          <h3 class="mb-0">Carga por Desarrollador</h3>
+        </div>
+        <div class="col-md-6">
+          <div class="search-box w-100">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Buscar desarrollador"
+              [(ngModel)]="developerSearch"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive table-container">
+      <table class="table align-middle styled-table" *ngIf="filteredDeveloperWorkload.length">
+        <thead>
+          <tr>
+            <th (click)="sortWorkload('developerName')" class="cursor-pointer">
+              <span class="th-icon">👤</span> Desarrollador
+              {{ sortOrder['developerName'] === 'asc' ? '↑' : '↓' }}
+            </th>
+            <th (click)="sortWorkload('openTasksCount')" class="cursor-pointer">
+              <span class="th-icon">📋</span> Tareas Abiertas
+              {{ sortOrder['openTasksCount'] === 'asc' ? '↑' : '↓' }}
+            </th>
+            <th><span class="th-icon">⚡</span> Complejidad Promedio</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let d of filteredDeveloperWorkload">
+            <td class="fw-bold">{{ d.developerName }}</td>
+            <td>
+              <span class="badge badge-info">{{ d.openTasksCount }}</span>
+            </td>
+            <td>
+              <span
+                class="complexity-badge"
+                [class.high-complexity]="d.averageEstimatedComplexity >= 7">
+                {{ d.averageEstimatedComplexity | number:'1.1-1' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="!filteredDeveloperWorkload.length" class="empty-state">
+        <span class="empty-icon">📭</span>
+        <p>No se encontraron resultados</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 2. Estado por proyecto -->
+  <!-- ========================= -->
+  <section class="card card-projects shadow-sm mb-4" *ngIf="!loading && !errorMessage">
+    <div class="card-header bg-transparent border-0">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6 d-flex align-items-center gap-2 card-title">
+          <span class="card-icon">🎯</span>
+          <h3 class="mb-0">Estado por Proyecto</h3>
+        </div>
+        <div class="col-md-6">
+          <div class="search-box w-100">
+            <span class="search-icon">🔍</span>
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Buscar proyecto"
+              [(ngModel)]="projectSearch"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive table-container">
+      <table class="table align-middle styled-table" *ngIf="filteredProjectSummary.length">
+        <thead>
+          <tr>
+            <th>📁 Proyecto</th>
+            <th>👨‍💼 Cliente</th>
+            <th>📊 Total</th>
+            <th>🔓 Abiertas</th>
+            <th>✅ Completadas</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let p of filteredProjectSummary"
+              [class.alert-row]="p.openTasks > p.completedTasks">
+            <td class="fw-bold">{{ p.projectName }}</td>
+            <td><span class="badge badge-neutral">{{ p.clientName }}</span></td>
+            <td><span class="badge badge-neutral">{{ p.totalTasks }}</span></td>
+            <td><span class="badge badge-warning">{{ p.openTasks }}</span></td>
+            <td><span class="badge badge-success">{{ p.completedTasks }}</span></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="!filteredProjectSummary.length" class="empty-state">
+        <span class="empty-icon">📭</span>
+        <p>No se encontraron resultados</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= -->
+  <!-- 3. Riesgo de retraso -->
+  <!-- ========================= -->
+  <section class="card card-risks shadow-sm mb-4" *ngIf="!loading && !errorMessage">
+    <div class="card-header bg-transparent border-0">
+      <div class="row g-3 align-items-center">
+        <div class="col-md-6 d-flex align-items-center gap-2 card-title">
+          <span class="card-icon">⚠️</span>
+          <h3 class="mb-0">Riesgo de Retraso</h3>
+        </div>
+        <div class="col-md-6">
+          <div class="filter-box w-100">
+            <span class="filter-icon">🎚️</span>
+            <select class="form-select" [(ngModel)]="riskFilter">
+              <option value="">Todos los riesgos</option>
+              <option value="1">🔴 Riesgo Alto</option>
+              <option value="0">🟢 Normal</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="table-responsive table-container">
+      <table class="table align-middle styled-table" *ngIf="filteredRiskData.length">
+        <thead>
+          <tr>
+            <th>👤 Desarrollador</th>
+            <th>📋 Abiertas</th>
+            <th>⏱️ Retraso</th>
+            <th>📅 Cercano</th>
+            <th>📆 Lejano</th>
+            <th>🎯 Predicción</th>
+            <th>🚨 Riesgo</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of filteredRiskData" [class.risk-row]="r.highRiskFlag">
+            <td class="fw-bold">{{ r.developerName }}</td>
+            <td><span class="badge badge-info">{{ r.openTasksCount }}</span></td>
+            <td>
+              <span class="delay-badge" [class.text-danger]="r.avgDelayDays >= 3">
+                {{ r.avgDelayDays }} días
+              </span>
+            </td>
+            <td class="date-cell">{{ r.nearestDueDate | date:'dd/MM/yyyy' }}</td>
+            <td class="date-cell">{{ r.latestDueDate | date:'dd/MM/yyyy' }}</td>
+            <td class="date-cell">{{ r.predictedCompletionDate | date:'dd/MM/yyyy' }}</td>
+            <td>
+              <span class="risk-badge"
+                    [ngClass]="r.highRiskFlag ? 'badge-danger' : 'badge-success'">
+                {{ r.highRiskFlag ? '🔴 Riesgo Alto' : '🟢 Normal' }}
+              </span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div *ngIf="!filteredRiskData.length" class="empty-state">
+        <span class="empty-icon">📭</span>
+        <p>No se encontraron resultados</p>
+      </div>
+    </div>
+  </section>
+
+</div>
